@@ -112,3 +112,4 @@ function resetTimer() {
 }
 
 
+renderImagesForTab(0);
