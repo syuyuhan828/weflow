@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <title>聚光燈測試</title>
+  <style>
+    body {
+      background: #111;
+      margin: 0;
+      padding: 50px;
+      font-family: sans-serif;
+    }
+
+    .spotlight-area {
+      position: relative;
+      width: 600px;
+      height: 300px;
+      background-color: #2C2C2C;
+      border-radius: 20px;
+      margin: auto;
+      color: white;
+      font-size: 24px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    .spotlight-area::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      background: radial-gradient(
+        circle 100px at var(--x, 50%) var(--y, 50%),
+        rgba(255, 255, 200, 0.4),
+        transparent 80%
+      );
+      opacity: var(--opacity, 0);
+      transition: opacity 0.2s ease;
+      z-index: 1;
+    }
+
+    .spotlight-text {
+      position: relative;
+      z-index: 2;
+    }
+  </style>
+</head>
+<body>
+
+<div class="spotlight-area" id="spotlight">
+  <div class="spotlight-text">把滑鼠移進來，應該會有聚光燈</div>
+</div>
+
+<script>
+  const spotlight = document.getElementById('spotlight');
+
+  spotlight.addEventListener('mousemove', (e) => {
+    const rect = spotlight.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    spotlight.style.setProperty('--x', `${x}px`);
+    spotlight.style.setProperty('--y', `${y}px`);
+    spotlight.style.setProperty('--opacity', 1);
+  });
+
+  spotlight.addEventListener('mouseleave', () => {
+    spotlight.style.setProperty('--opacity', 0);
+  });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,79 @@
+.weflow-poster {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.weflow-poster-container {
+    max-width: 800px;
+    height: auto;
+    padding: 20px;
+}
+
+.weflow-poster-container h2 {
+    height: 200px;
+    font-size: 60px;
+    margin: 0;
+}
+
+@keyframes blink {
+    50% {
+        border-color: transparent;
+    }
+}
+
+#typewriter {
+    border-right: 2px solid #333;
+    padding-right: 2px;
+    height: 40px;
+    white-space: nowrap;
+    display: inline-block;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    margin-top: 5px;
+    animation: blink 0.75s steps(1) infinite;
+}
+
+
+
+.weflow-poster-container span{
+    display: inline-flex; /*不知道為什麼這裡改成inline-flex跟inline-block不一樣*/
+    height: 40px;
+    font-size: 24px;
+    justify-content: center;
+    align-items: center
+}
+
+
+
+.indented {
+    display: inline-block;
+    text-indent: 2em;
+}
+
+.starting-now-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.starting-now {
+    display: block;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 19px 40px ;
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    background-color: #3D5A66;
+    border-radius: 40px;
+}
+
+.starting-now:hover {
+    text-decoration: none;
+    color: white;
+}
+
