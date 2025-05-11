@@ -110,3 +110,20 @@
 
 }
 
+footer {
+    width: 100%;
+    background-color: #000;
+    height: auto;
+    line-height: 25px;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+footer span {
+    font-size: 20px;
+    margin: 2px 0px;
+    color: white;
+}
