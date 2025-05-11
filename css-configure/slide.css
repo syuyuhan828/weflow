@@ -88,12 +88,12 @@
     box-sizing: border-box;
     flex-wrap: nowrap;
     border-radius: 45px;
+    
 }
 
 .slide-container img{
     width: 960px;
     height: 800px;
-    
     overflow: hidden;
     flex-shrink: 0;
 }
