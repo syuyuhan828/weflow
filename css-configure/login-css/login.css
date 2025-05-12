@@ -1,0 +1,59 @@
+html{
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.login-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url(../img-css/login-background-larger.png);
+
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 100% 100%;  /* ✅ 重點！完整呈現圖片並強制拉伸填滿 */
+    
+}
+
+
+
+.login-console{
+    display: flex;
+    flex-flow: column wrap;
+    border: 1px solid #000;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2);
+    background-color: #fff;
+    flex-wrap: wrap;
+    width: auto;
+    height: auto;
+    padding: 10px 5px;
+    justify-content: center;
+    align-items: center;
+
+    font: 15px / 20px Helvetica;
+    
+}
+
+.weflow-logo{
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+
+.login-console .member-phote{
+    background-color: grey;
+}
+
+
+.login-console input{
+    height: 60px;
+    margin: 5px 10px;
+}
+
