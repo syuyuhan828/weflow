@@ -1,0 +1,40 @@
+.weflow-primary-area{
+    display: flex;
+    flex-direction: row;
+
+    border: 4px solid pink;
+}
+
+
+.weflow-side-control-panel{
+    border: 2px solid blue;
+}
+
+.profile-pic-and-name {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.profile-pic-and-name img{
+    border-radius: 50%;
+    width: 42px;
+    height: 42px;
+}
+
+.profile-pic-and-name span{
+    font: 32px;
+    line-height: 40px;
+}
+
+
+.weflow-show-panel{
+    border: 2px solid green;
+}
+
+
+.weflow-main-poster {
+    border: 2px solid bisque;
+}
