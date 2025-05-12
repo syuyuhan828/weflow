@@ -1,15 +1,15 @@
 .sponser-me {
     width: 100%;
-    overflow: hidden;      /* 隱藏超出範圍的文字 */
-    background: #ff00;   /* 或你要的底色 */
-    padding: 10px 0;       /* 上下間距 */
+    overflow: hidden;      
+    background: #ff00;   
+    padding: 10px 0;       
     box-sizing: border-box;
 }
 
 .sponser-me span {
     display: inline-block;
-    white-space: nowrap;   /* 不換行 */
-    padding-left: 100%;    /* 文字起始點推到容器外 */
+    white-space: nowrap;   
+    padding-left: 100%; 
     animation: marquee 5s linear infinite;
     font-size: 25px;
     line-height: 30px;
@@ -17,7 +17,7 @@
     color: #000;
 }
 
-/* 跑馬燈動畫：從 0% 推到 -100% */
+
 @keyframes marquee {
     0%   { transform: translateX(0); }
     100% { transform: translateX(-100%); }
