@@ -6,15 +6,28 @@
     </head>
     <body>
         <main class="login-page">
-            <img src="./img/WeFlow-Logo.svg" alt="" class="weflow-logo" width="200" height="100">
             <div class="login-console">
-                <span class="login-text">會員登入</span>
-                <img src="" alt="" class="member-photo">
-                <input type="text" class="accout" placeholder="請輸入帳號密碼">
-                <input type="password" class="password" placeholder="請輸入密碼">
-                <a href="">登入</a>
-                <a href="">註冊</a>
-                <span>忘記密碼?</span>
+                <img src="./img/WeFlow-Logo.svg" alt="" class="weflow-logo">
+                <div class="login-text-container">
+                    <span class="login-text"> <strong>會員登入</strong> </span>
+                </div>
+                <div class="account-container">
+                    <label class="account-text" for="account-column">帳號：</label>
+                    <input type="text" id="account-column" class="accout-input" placeholder="請輸入帳號密碼">
+                </div>
+                <div class="password-container">
+                    <label class="password-text" for="password-column">密碼：</label>
+                    <input type="password" id="password-column" class="password-input" placeholder="請輸入密碼">
+                </div>
+                <div class="login-o-registration">
+                    <a href="" class="login-btn">
+                        <span class="login-btn-span">登入</span>
+                    </a>
+                    <a href="" class="registration-btn">
+                        <span class="registration-btn-span">註冊</span>
+                    </a>
+                </div>
+                <span class="forgot-password">忘記密碼?</span>
             </div>
         </main>
     </body>

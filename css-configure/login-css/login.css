@@ -13,14 +13,13 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-image: url(../img-css/login-background-larger.png);
+    background-image: url(../img-css/login-background3d5a66.png);
 
     background-repeat: no-repeat;
     background-position: center center;
-    background-size: 100% 100%;  /* ✅ 重點！完整呈現圖片並強制拉伸填滿 */
+    background-size: 100% 100%; 
     
 }
-
 
 
 .login-console{
@@ -29,31 +28,95 @@ body {
     border: 1px solid #000;
     box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2);
     background-color: #fff;
-    flex-wrap: wrap;
     width: auto;
     height: auto;
-    padding: 10px 5px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    gap: 15px;
     justify-content: center;
     align-items: center;
-
-    font: 15px / 20px Helvetica;
+    font-size: 15px;
+    line-height: 20px;
+    font-family: 'Noto Sans TC', sans-serif;
+    backdrop-filter: blur(5px);
+    border-radius: 12px;
     
 }
 
+
+
+.login-text{
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    font-size: 32px;
+    letter-spacing: 1px;
+    padding: 0;
+    margin-top: 12px;
+}
+
+
+
 .weflow-logo{
-    position: absolute;
-    left: 0;
-    top: 0;
+    height: 40px;
+    width: 140px;
+    margin-bottom: 12px;
+}
+
+.account-container input, .password-container input{
+    height: 30px;
+    width: 240px;
+    padding: 5px 0 5px 0;
+    margin: 5px 0 5px 0;
+    font-size: 14px;
+    border-radius: 8px;
+}
+
+.password-container span .password-container span{
+    width: 80px;
+    box-sizing: border-box;
 }
 
 
-.login-console .member-phote{
-    background-color: grey;
+
+
+.login-o-registration{
+    display: flex;
 }
 
-
-.login-console input{
+.login-console a{
     height: 60px;
+    padding: 0 5px 0 5px;
+    box-sizing: border-box;
+    text-decoration: none;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-btn,
+.registration-btn {
+    flex: 1;
+    text-align: center;
+    width: 110px;
+    background-color: #000;
+    border-radius: 20px;
     margin: 5px 10px;
+}
+
+.login-btn:hover,
+.registration-btn:hover {
+    background-color: #ff7e39;
+    transition: background-color 0.3s ease;
+}
+
+
+.forgot-password {
+    height: 30px;
+    cursor: pointer;
+    flex-grow: 1;
 }
 
