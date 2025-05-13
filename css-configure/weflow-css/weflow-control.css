@@ -1,0 +1,72 @@
+.weflow-primary-area{
+    display: flex;
+    flex-direction: row;
+
+    border: 4px solid pink;
+}
+
+
+.weflow-side-control-panel{
+    border: 2px solid blue;
+    padding: 12px 12px 40px 12px;
+    box-sizing: border-box;
+}
+
+.user-name{
+    white-space: nowrap;
+}
+
+
+.profile-pic-and-name {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.profile-pic-and-name img{
+    border-radius: 50%;
+    width: 42px;
+    height: 42px;
+}
+
+.profile-pic-and-name span{
+    font: 32px;
+    line-height: 40px;
+}
+
+
+.weflow-utility{
+    border-bottom: 1px solid rgba(127, 127, 127, 0.4); 
+}
+
+.weflow-utility > div{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.weflow-utility > div > img{
+    width: 20px;
+    height: 20px;
+}
+
+.followed-topic {
+    border-bottom: 1px solid rgba(127, 127, 127, 0.4); 
+}
+
+.owned-topic{
+    border-bottom: 1px solid rgba(127, 127, 127, 0.4); 
+}
+
+
+.followed-topic h3, .owned-topic h3 {
+    margin-bottom: 5px;
+}
+
+
+
+.weflow-utility div{
+    padding: 12px 0;
+}
