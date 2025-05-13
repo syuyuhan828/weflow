@@ -70,9 +70,14 @@
 }
 
 .logo-url {
+    background: rgba(255, 255, 255, 0.01);
     box-sizing: border-box;
     padding: 5px 10px 5px 10px;
+    
 }
+
+
+
 
 .weflow-feature{
     display: flex;
@@ -81,7 +86,7 @@
 
 .weflow-feature a{
     text-decoration: none;
-    color: black;
+    color: white;
     font-size: 20px;
     border-radius: 15px;
     padding: 5px 10px;
@@ -94,7 +99,7 @@
     display: block; 
     height: 2px;
     width: 0%;
-    background-color: black;
+    background-color: white;
     transition: .2s;
 }
 
