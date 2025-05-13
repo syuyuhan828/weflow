@@ -1,21 +1,23 @@
 const ControlSlideListBtns = document.querySelectorAll(".slide-list li");
 const controller = document.querySelector(".slide-list");
 
+
+//不知道為什麼不會報錯
 const slideImages = {
     0: [
-        "../img/weflow-news.png"
+        "../../img/weflow-news.png"
     ],
     1: [
-        "../img/weflow-courses.png"
+        "../../img/weflow-courses.png"
     ],
     2: [
-        "../img/weflow-live-stream.png"
+        "../../img/weflow-live-stream.png"
     ],
     3:[
-        "../img/weflow-chat.png"
+        "../../img/weflow-chat.png"
     ],
     4:[
-        "../img/weflow-user-analysis.png"
+        "../../img/weflow-user-analysis.png"
     ]
 }
 
