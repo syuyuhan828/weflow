@@ -1,61 +1,45 @@
 const ControlSlideListBtns = document.querySelectorAll(".slide-list li");
 const controller = document.querySelector(".slide-list");
+const slideContainer = document.querySelector(".slide-container");
 
-
-//不知道為什麼不會報錯
-const slideImages = {
-    0: [
-        "../../img/weflow-news.png"
-    ],
-    1: [
-        "../../img/weflow-courses.png"
-    ],
-    2: [
-        "../../img/weflow-live-stream.png"
-    ],
-    3:[
-        "../../img/weflow-chat.png"
-    ],
-    4:[
-        "../../img/weflow-user-analysis.png"
-    ]
-}
-
+// 所有轮播图片
+const slideImages = [
+    "../../img/weflow-news.png",
+    "../../img/weflow-courses.png",
+    "../../img/weflow-live-stream.png",
+    "../../img/weflow-chat.png",
+    "../../img/weflow-user-analysis.png"
+];
 
 let currentIndex = 0;
 let isHovering = false;
-
-
 const totalTabs = ControlSlideListBtns.length;
 
-
-// 初始聚光燈位置
+// 初始聚光灯位置
 moveGlowtoActive();
 
-controller.addEventListener("mouseenter", ()=>{
+controller.addEventListener("mouseenter", () => {
     isHovering = true;
-})
+});
 
-controller.addEventListener("mouseleave", ()=>{
-    isHovering=false;
+controller.addEventListener("mouseleave", () => {
+    isHovering = false;
     moveGlowtoActive();
-})
+});
 
-
-
-// 點擊按鈕時切換 active
+// 点击按钮时切换 active
 ControlSlideListBtns.forEach((tab, index) => {
     tab.addEventListener("click", () => {
         ControlSlideListBtns.forEach(t => t.classList.remove("active"));
         tab.classList.add("active");
         moveGlowtoActive();
         currentIndex = index;
-        renderImagesForTab(index);
-        resetTimer(); // 重新設置計時器
+        updateSlide(index);
+        resetTimer(); // 重新设置计时器
     });
 });
 
-// 聚光燈移動到當前選中的 li
+// 聚光灯移动到当前选中的 li
 function moveGlowtoActive() {
     const activeTab = controller.querySelector(".active");
     if (activeTab) {
@@ -69,25 +53,58 @@ function moveGlowtoActive() {
     }
 }
 
-// 自動切換到下一個 tab
+// 初始化轮播图片
+function initializeSlides() {
+    slideContainer.innerHTML = '';
+    
+    // 渲染所有图片
+    slideImages.forEach((src, index) => {
+        const div = document.createElement('div');
+        div.className = index === currentIndex ? 'active' : 'inactive';
+        
+        const img = document.createElement('img');
+        img.src = src;
+        img.alt = `Slide ${index + 1}`;
+        
+        div.appendChild(img);
+        slideContainer.appendChild(div);
+    });
+    
+    // 设置初始位置
+    updateSlide(currentIndex);
+}
+
+// 更新轮播图位置和样式
+function updateSlide(index) {
+    currentIndex = index;
+    
+    // 更新所有幻灯片的类名
+    const slides = slideContainer.querySelectorAll('div');
+    slides.forEach((slide, i) => {
+        if (i === index) {
+            slide.className = 'active';
+        } else {
+            slide.className = 'inactive';
+        }
+    });
+    
+    // 计算需要滚动的位置 (使当前幻灯片居中)
+    const slideWidth = slides[0].offsetWidth;
+    const margin = parseInt(getComputedStyle(slides[0]).marginLeft) + 
+                parseInt(getComputedStyle(slides[0]).marginRight);
+    
+    const scrollPosition = index * (slideWidth + margin);
+    slideContainer.scrollTo({
+        left: scrollPosition,
+        behavior: 'smooth'
+    });
+}
+
+// 自动切换到下一个 tab
 function autoNext() {
     currentIndex = (currentIndex + 1) % totalTabs;
     updateTab(currentIndex);
-}
-
-controller.addEventListener("mouseleave", moveGlowtoActive);
-
-function renderImagesForTab(index){
-    const imgContainer = document.querySelector(".slide-container");
-    imgContainer.innerHTML = "";
-    slideImages[index].forEach(src => {
-        const img = document.createElement('img');
-        img.src = src;
-        img.width = 960;
-        img.height = 800;
-        img.style.flexShrink = '0';
-        imgContainer.appendChild(img);
-    });
+    updateSlide(currentIndex);
 }
 
 // 更新 tab 和光圈
@@ -95,23 +112,18 @@ function updateTab(index) {
     ControlSlideListBtns.forEach((tab, i) => {
         tab.classList.toggle("active", i === index);
     });
-    //要監聽使用者是否有把滑鼠放在上面
     
     if (!isHovering) {
         moveGlowtoActive();
     }
-
-    renderImagesForTab(index);
-    currentIndex = index;
 }
 
-// 設置計時器，自動切換 tab
+// 设置计时器，自动切换 tab
 let timer = setInterval(autoNext, 3000);
 
 function resetTimer() {
     clearInterval(timer);
-    timer = setInterval(autoNext, 3000); // 每 3 秒自動輪播
+    timer = setInterval(autoNext, 3000); // 每 3 秒自动轮播
 }
 
-
-renderImagesForTab(0);
+initializeSlides();
