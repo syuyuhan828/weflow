@@ -1,3 +1,9 @@
+header {
+    position: relative;
+    overflow: visible;
+}
+
+
 .weflow-bar{
     display: flex;
     justify-content: flex-start;
@@ -5,9 +11,18 @@
     align-items: center;
     margin: 0;
     border-bottom: 1px solid rgba(127, 127, 127, 0.4);
-    padding: 20px 0;
+    padding: 12px 0 12px 0;
+    height: var(--weflow-bar-height);
+    box-sizing: border-box;
+    background: #fff;
 
-    border: 2px solid red;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    /* background-color: white; */
+    
 }
 
 

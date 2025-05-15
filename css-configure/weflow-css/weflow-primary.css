@@ -1,9 +1,65 @@
 .weflow-show-panel{
-    border: 2px solid green;
-    width: 100%;
+    /* border: 2px solid gren; */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 65%;
+    position: fixed;
+    top: var(--weflow-bar-height);
+    left: calc(var(--weflow-side-width));
+    right: calc(var(--weflow-supplement-width));
+
+}
+
+.show-panel-info {
+    padding: 20px 20px;
+    background-color: #fff;
+    display: flex;
+    justify-content: flex-start;
+    height: var(--weflow-info-height);
+    position: sticky;
+    top: 0;
+    right: calc(var(--weflow-supplement-width))
+
+}
+
+
+.find-target{
+    display: flex;
+    margin-left: auto;
+    align-items: center;
+}
+
+.find-target img {
+    width:20px;
+    height: 20px;
+    margin-right: 10px;
 }
 
 
 .weflow-main-poster {
-    border: 2px solid bisque;
+    position: fixed;
+    /* border: 2px solid bisque; */
+    min-height: 100%;
+    background-color: rgb(246, 246, 246);
+    
+    margin-left: 0;
+    z-index: -1;
+    box-shadow:
+        inset 0 0 50px rgba(0, 0, 0, 0.08),
+        inset 0 0 100px rgba(0, 0, 0, 0.04);
+    width: inherit;
+
+    margin-top: calc(var(--weflow-bar-height)+var(--weflow-info-height));
+}
+
+.weflow-supplement-panel{
+
+    position: fixed;
+    top: calc(var(--weflow-bar-height));
+    bottom: 0;
+    width: var(--weflow-supplement-width);
+    right: 0;
+
+
 }

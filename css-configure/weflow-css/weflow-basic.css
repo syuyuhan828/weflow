@@ -1,9 +1,19 @@
-html {
+:root {
+    --weflow-bar-height: 72px;
+    --weflow-side-width: 20%;
+    --weflow-supplement-width: 15%;
+    --weflow-info-height: 10%;
+    
+}
+
+
+html, body {
     margin: 0;
     padding: 0;
 }
 
+
 body {
-    margin: 0;
-    padding: 0;
+    display: flex;
+    flex-direction: column;
 }
